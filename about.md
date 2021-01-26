@@ -13,7 +13,7 @@ In terms of the natural world, I like to learn Math and Physics, which reveals t
 
 In terms of the social world, I am interested in the behavior of human-beings and the algorithms behind it. In my Ph.D period, I am studying how the brain implements algorithms to process novelty/surprise/uncertainty signals.
 
-My Other interest includes: Climbing, snow skiing, ice skating, etc..
+My other interest includes: Climbing, snow skiing, ice skating, etc..
 
 
 
