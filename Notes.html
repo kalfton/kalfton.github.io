@@ -1,10 +1,45 @@
 ---
 layout: page
 title: Notes
+hide: false
+permalink: /Notes/
 hide: true
 ---
 
 <div class="posts">
-Under construction...
-
+<ul>
+{% for page in site.Notes %}
+       <li><a href="{{ page.url }}">{{ page.title }}</a></li> {{ post.date | date_to_string }}
+ {% endfor %}  <!-- page -->
+ Under construction...
+</ul>
 </div>
+
+<style>
+.coll {
+    float: left;
+    width: 33.33%;
+    padding-bottom: 50px;
+}
+.coll2 {
+    float: left;
+    width: 49.9%;
+    padding-bottom: 50px;
+}
+.coll4 {
+    float: left;
+    width: 24.9%;
+    padding-bottom: 50px;
+}
+.coll5 {
+    float: left;
+    width: 19.99%;
+    padding-bottom: 50px;
+}
+/* Clear floats after the columns */
+.roww:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>

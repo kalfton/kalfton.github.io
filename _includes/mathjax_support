@@ -1,17 +1,20 @@
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: {
-      equationNumbers: {
-        autoNumber: "AMS"
-      }
-    },
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
+<script> 
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [ ['$$','$$'], ['\\[', '\\]']], 
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
 </script>
-<script type="text/javascript" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-//"https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML">
-//cdn server shut down.... use cdnjs instead from now on. 
-</script>
+<script type="text/javascript" id="MathJax-script" async
+   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  //src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  //
+</script> 
 <!-- Math jax 3 version. Switch to this when MathJax2 is not supported. 
 <script> 
 MathJax = {
