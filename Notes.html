@@ -1,17 +1,22 @@
 ---
 layout: page
-title: Notes
+title: Academic Notes
 hide: false
-permalink: /Notes/
+permalink: /Academic_notes/
 hide: true
 ---
 
 <div class="posts">
 <ul>
-{% for page in site.Notes %}
-       <li><a href="{{ page.url }}">{{ page.title }}</a></li> {{ post.date | date_to_string }}
- {% endfor %}  <!-- page -->
- Under construction...
+
+{% for page in site.Academic_notes %}
+	<h2>
+       <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+   </h2>
+{% endfor %}  <!-- page -->
+
+
+
 </ul>
 </div>
 

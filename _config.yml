@@ -87,12 +87,10 @@ exclude:
   - Gemfile.lock
 
 collections:
-  tech_note:
+  Academic_notes:
     output: true
     permalink: /:collection/:name
-  Notes:
+  tech_notes:
     output: true
     permalink: /:collection/:name
-  papers:
-    output: true
-    permalink: /:collection/:name
+    
