@@ -2,7 +2,10 @@
 layout: post
 title: A theory about efficient coding
 use_math : true
-
+published: ture
+date:  May 15, 2021
+author: Kaining Zhang
+tags: [academic, optimization, neuroscience]
 ---
 
 Neurons in the brain respond to external stimuli. In the frame work of efficient coding theory, there is an objective function, and the neuron's response should optimize that objective function.
@@ -166,6 +169,7 @@ We can consider a more general efficient coding problem. The input space can be 
 
 An example objective function could be 
 $$ E_{w \in W}(\int_X |dw| f_X d \sigma) $$ 
+
 
 
 

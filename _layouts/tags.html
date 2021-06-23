@@ -2,30 +2,72 @@
 layout: page
 ---
 
-{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign tag_words = site_tags | split:',' | sort %}
+<!-- tags in thoughts-->
+{% assign thoughts_tags =  site.thoughts | map: 'tags' | uniq %}
+<!-- tags in post -->
+{% assign post_tags =  site.posts | map: 'tags' | uniq %}
+<!-- tags in tech_note -->
+{% assign tech_tags =  site.tech_notes | map: 'tags' | uniq %}
+<!-- pool all tags together -->
+{% assign tags =  thoughts_tags | concat: post_tags | concat: tech_tags |uniq | sort %}
 
-<!-- cycles through tag list and creates subheader for each tag name -->
-{% for item in (0..site.tags.size) %}
-  {% unless forloop.last %}
-    {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-    <h2 id="{{ this_word | cgi_escape }}" class="tag-title">
-      #{{ this_word }}
-    </h2>
-    <!-- lists all posts corresponding to specific tag -->
-    {% for post in site.tags[this_word] %}
-      {% if post.title != null %}
+{% for tag in tags %}
+  <h2 class="tag-title">
+    #{{ tag }}
+  </h2>
+  <ul>
+  <!-- loop in thoughts-->
+  {% for note in site.thoughts %}
+    {% if note.tags contains tag %}
+      {% if note.title != null %}
         <div class="tagged-post">
           <h3 class="title">
-            <a href="{{ post.url | relative_url }}">
-              {{ post.title }}
+            <a href="{{ note.url | relative_url }}">
+              {{ note.title }}
             </a>
           </h3>
           <div class="meta">
-            {{ post.date | date: "%B %-d, %Y" }}
+            {{ note.date | date: "%B %-d, %Y" }}
           </div>
         </div>
       {% endif %}
-    {% endfor %}
-  {% endunless %}
+    {% endif %}
+  {% endfor %}
+
+  <!-- loop in posts-->
+  {% for note in site.posts %}
+    {% if note.tags contains tag %}
+      {% if note.title != null %}
+        <div class="tagged-post">
+          <h3 class="title">
+            <a href="{{ note.url | relative_url }}">
+              {{ note.title }}
+            </a>
+          </h3>
+          <div class="meta">
+            {{ note.date | date: "%B %-d, %Y" }}
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <!-- loop in tech_notes-->
+  {% for note in site.tech_notes %}
+    {% if note.tags contains tag %}
+      {% if note.title != null %}
+        <div class="tagged-post">
+          <h3 class="title">
+            <a href="{{ note.url | relative_url }}">
+              {{ note.title }}
+            </a>
+          </h3>
+          <div class="meta">
+            {{ note.date | date: "%B %-d, %Y" }}
+          </div>
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </ul>
 {% endfor %}
