@@ -10,7 +10,7 @@ tags: [random, optimization]
 
 "Life is an optimal control problem."
 
-The professor said the line in an optimal control class.
+Professor Schaettler said the line in the class when he talked about optimal control in economics.
 
 If life is an the optimal control problem, first of all, we need to define an objective function for it.
 At first glance it may look hard to find an universal objective function for every one, different people have different goals in their life. 
@@ -142,12 +142,10 @@ Inside the parent's objective function, children's integrals of happiness are al
 
 For example, I observe that parents like to force their children to study even if the children don't want to. The behavior of studying may not create big instant happiness (sometimes even very negative feelings). However it creates much more happiness in their adulthood by providing more choices in career and on average higher salaries. However, not all people in their childhood can realize the benefits and implement this better optimized behavior. So the job for the parents is to overwrite the children's algorithm, aka be against the children's will and push them to study. 
 
-By Kaining
-
 
 <h3>Reference:</h3>
 [1]. Sutton, R.S. and Barto, A.G., 2018. Reinforcement learning: An introduction. MIT press.<br />
 [2]. Schultz, W., Dayan, P. and Montague, P.R., 1997. A neural substrate of prediction and reward. Science, 275(5306), pp.1593-1599.<br />
 [3]. Bromberg-Martin, E.S., Matsumoto, M. and Hikosaka, O., 2010. Dopamine in motivational control: rewarding, aversive, and alerting. Neuron, 68(5), pp.815-834.<br />
 [4]. https://en.wikipedia.org/wiki/Consumerism<br />
-[5]. An interesting discussion Binxu and I have had about persistency: [link](https://animadversio.github.io/personal%20writing/2021/01/15/A-model-of-Persisitency.html)<br />
+[5]. Binxu and I had an interesting discussion that about persistency: [link](https://animadversio.github.io/personal%20writing/2021/01/15/A-model-of-Persisitency.html)<br />
