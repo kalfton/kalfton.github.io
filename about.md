@@ -1,9 +1,13 @@
 ---
 layout: page
-title: About Me
-permalink: /about/
+#title: About me
+#permalink: /about/
 
 ---
+<div style="text-align:center">
+<img src="/photo/selfie1.png" alt="Input space transformation function" width = "200" align="center">
+</div>
+<br /><br />
 
 I am Kaining Zhang, currently a 5th year graduate student in Biomedical Engineering program in Washington University in St. Louis. My Ph.D supervisor is [Ilya Monosov](https://neuroscience.wustl.edu/people/ilya-monosov-phd/). Before that, I got my Bachelor degree in Physics from University of Science and Technology of China (USTC). 
 
