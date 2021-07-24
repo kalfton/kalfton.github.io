@@ -5,7 +5,7 @@ use_math : true
 published: ture
 date:  May 15, 2021
 author: Kaining Zhang
-tags: [academic, optimization, neuroscience]
+tags: [academic, optimization, neuroscience math]
 ---
 
 Neurons in the brain respond to external stimuli. In the frame work of efficient coding theory, there is an objective function, and the neuron's response should optimize that objective function.
