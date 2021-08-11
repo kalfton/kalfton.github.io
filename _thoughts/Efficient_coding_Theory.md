@@ -93,7 +93,7 @@ Given $ C $ as an Identity matrix $ C = Id $, we want to find out the optimal so
 
 Because $ C$ is an Identity matrix,
 \begin{equation}
-   E({bf x_i x_j}) =
+   E({\bf x_i x_j}) =
    \begin{cases}
     0, & \text{ when }  i \neq j \\
     1, & \text{ when } i = j
