@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A theory about efficient coding
+title: Face detection
 use_math : true
 published: false
 date:  Sep. 13, 2021
@@ -12,6 +12,11 @@ tags: [tech]
  Haar cascades vs MTCNN: https://towardsdatascience.com/face-detection-models-which-to-use-and-why-d263e82c302c
 
 
+2. MTCNN vs. FaceBoxes vs. Retinaface
+MTCNN: https://github.com/timesler/facenet-pytorch (a pytorch based model)
+
+
+
 Tech note:
 
 https://github.com/cunjian/pytorch_face_landmark
@@ -21,7 +26,26 @@ CV2 conflict with pytorch? solved install python=3.7 and install opencv first th
 running test_batch_detections.py:
 need module FaceBoxes
 When I try to build FaceBoxes:
-error: Unable to find vcvarsall.bat: 
+error: Unable to find vcvarsall.bat: ...
+Solution: look into utils/build.py
+To do: figure out how to run build.py in spyder environment.
+See what is cython package. https://smirnov-am.github.io/cython/ 
+--a package which can help to run c++ code in python environment
+Possible diagnose: the cython package is not well installed. (it can't find c++ compiler like Visual studio)
+Solved finally...
+new error: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized.
+https://stackoverflow.com/questions/20554074/sklearn-omp-error-15-initializing-libiomp5md-dll-but-found-mk2iomp5md-dll-a
+run line:
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+####
+not a elegant solution, let's find if there are better solution in the future.(Solved by creating another environment)
+New error:
+No module named 'onnx.backend'(Solved, need to use an old version of onnx)
+
+pdb — The Python Debugger
+
+
 
 
 
@@ -32,4 +56,28 @@ error: there is no example video to train the model, (no dir 'train.record') :So
 Error: Could not load dynamic library 'cupti64_101.dll'; dlerror: cupti64_101.dll not found:
 Solution 1: Instll the version CUDA 10.1, and add the path to the environment variable.
 Problem for solution 1: The path in cmd prompt(anaconda prompt) does not change even if I add it in the environment variable.
+Solution:Manually add the path to the environment.
+log1. At first time, it pop out other error, but at the second time the error appears again.
+Also download CUDNN and add it to the path variable, but doesn't change anything.
+Restart the computer: Nothing changes.
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+get https://github.com/cunjian/pytorch_face_landmark working.
+Next problem: 1) It seems that it can not detect monkey's face in most of the frames.
+2) for the frames that successfully detect the monkey face, the landmarks were off.
+For 1). 
+Possible solution: 1. train the current network more.
+2. Or find another existing network that can do better at it, and see if there is any parameter that I can tune. 
+
+First try: use another retinaface network: https://github.com/biubug6/Pytorch_Retinaface#installation.
+
+Another possible try: See whether in the original code, it is compatible. 
 
