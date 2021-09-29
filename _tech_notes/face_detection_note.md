@@ -78,6 +78,17 @@ Possible solution: 1. train the current network more.
 2. Or find another existing network that can do better at it, and see if there is any parameter that I can tune. 
 
 First try: use another retinaface network: https://github.com/biubug6/Pytorch_Retinaface#installation.
+Process: Got it repository working.
 
 Another possible try: See whether in the original code, it is compatible. 
+
+
+
+
+
+
+
+
+
+
 
