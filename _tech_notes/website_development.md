@@ -6,10 +6,13 @@ layout: page
 
 1. How to use collection: https://jekyllrb.com/docs/collections/
 
+Use Ruby
+
 2. commands:
 $ gem install bundler
 $ bundle install
 $ bundle exec jekyll serve
+then browse the site http://localhost:4000
 
 3. image for inserting in the post can't be too large(<100k)
 
