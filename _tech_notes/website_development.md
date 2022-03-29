@@ -24,4 +24,5 @@ Liquid templating language: https://jekyllrb.com/docs/liquid/
 solution: delete feed.xml, and regenerate the website
 
 To do: change my front page color from green to white: read the readme, there might be instructions.
-
+margin use percentage rather than px
+use "layouts" to format a webpage. 
