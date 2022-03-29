@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript note
 use_math : true
-published: ture
+published: false
 date:  May 15, 2021
 author: Kaining Zhang
 ---

@@ -5,12 +5,17 @@ layout: default
 <div class="home">
   {% if site.theme_settings.header_text %}
   <div class="call-out"
-  style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
+  style="background-color:rgb(255, 255, 255)">
     {{ site.theme_settings.header_text }}
-    <br /><br />
-    {{ content }}
   </div>
   {% endif %}
+
+
+  <div style="margin-right: 335px; margin-left: 335px">
+    {{ content }}
+  </div>
+
+</div>
   <!--<section class="post-content">{{ content }}</section>-->
 
 <!-- This part shows the poster

@@ -20,3 +20,8 @@ then browse the site http://localhost:4000
 https://stackoverflow.com/questions/36958975/listing-jekyll-collection-pages-by-tags
 Liquid templating language: https://jekyllrb.com/docs/liquid/
 
+5. encounter error: Invalid argument @ rb_sysopen in feed.xml
+solution: delete feed.xml, and regenerate the website
+
+To do: change my front page color from green to white: read the readme, there might be instructions.
+

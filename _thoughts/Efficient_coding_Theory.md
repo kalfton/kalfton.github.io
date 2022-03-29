@@ -8,10 +8,10 @@ author: Kaining Zhang
 tags: [academic, optimization, neuroscience math]
 ---
 
-Neurons in the brain respond to external stimuli. In the frame work of efficient coding theory, there is an objective function, and the neuron's response should optimize that objective function.
+Neurons in the brain respond to external stimuli. In the framework of efficient coding theory, there is an objective function, and the neuron's response should optimize that objective function.
 
 
-We can describe the efficient coding problem in framework of mapping between spaces:
+We can describe the efficient coding problem in the framework of mapping between spaces:
 
  <p align=center>
 <img src="/assets/image_for_notes/efficient_coding_theory/efficient-coding-figure1.png" alt="Input space transformation function" width = "600" align="center">
@@ -19,15 +19,15 @@ We can describe the efficient coding problem in framework of mapping between spa
 
 
 <p align=center>
-	Figure 1
+   Figure 1
 <p/>
 
 
 
-The input stimuli lies in a m dimensional space(Input space). For example, if the stimuli are black and white images with m pixels, then each dimension can represents the brightness of a pixel.  <br /> <br />
+The input stimuli lie in an m-dimensional space(Input space). For example, if the stimuli are black and white images with m pixels, then each dimension can represent the brightness of a pixel.  <br /> <br />
 
 
-And then there is a group of neurons, each neuron uses its firing rate to encode objects. Each neuron's firing rate is a function on the input space(tuning curve), all the neurons' firing rates in the group form a r dimensional space. (r is the number of neurons) <br /> <br />
+Then, there is a group of neurons; each neuron uses its firing rate to encode objects. Each neuron's firing rate is a function on the input space(tuning curve), and all neurons' firing rates in the group form an r-dimensional space. (r is the number of neurons) <br /> <br />
 
 
 
@@ -36,13 +36,13 @@ If ignoring the noise of neuronal coding, each stimulus evokes a deterministic r
 
 
 Classically the objective function to be optimized is the information entropy of the neurons or the mutual information of the maps. 
-Given a group of neurons, if they encode the information of the stimuli as much as possible(maximizing the information entropy), then people say that the neuronal coding is efficient<sup>1,2</sup>. Noted that whether an encoding is efficient no only depends on the encoding map, but also depends on the statistics of the external stimuli.<br /> <br />
+Given a group of neurons, if they encode the information of the stimuli as much as possible(maximizing the information entropy), then people say that the neuronal coding is efficient<sup>1,2</sup>. Whether encoding is efficient depends not only on the encoding map but also on the statistics of the external stimuli.<br /> <br />
 
 
-Another way to describe efficient coding is that the neurons firing rate should discriminate more at the place where the objects' appearing probability is more dense, in some scenario it is equivalent to the optimization of information entropy, and in the following I will consider efficient coding using this kind of objective function.<br /> <br />
+Another way to describe efficient coding is that the neurons' firing rates should discriminate more at the place where the objects' appearing probability is denser. In some scenarios, it is equivalent to the optimization of information entropy, and in the following, I will consider efficient coding using this kind of objective function.<br /> <br />
 
 
-Here I consider a more specific scenario.  I assume 1) the distribution of input stimuli is a multi-variable gaussian distribution, centered at 0. 2) the transformation map is linear, i.e., for every neuron, the tuning curve on the input space is linear, and thus can be represented as a dot in the dual space of the input space. 3) neuron's tuning curve is a random vector, and the representation in the dual space is a multi-variable gaussian distribution centered at zero. if there are m neurons, then each neuron's tuning curve is drawn independently from this gaussian distribution.
+Here I consider a more specific scenario. I assume 1) the distribution of input stimuli is a multi-variable Gaussian distribution, centered at 0. 2) the transformation map is linear, i.e., for every neuron, the tuning curve on the input space is linear. Thus can be represented as a dot in the dual space of the input space. 3) neuron's tuning curve is a random vector, and the representation in the dual space is a multi-variable Gaussian distribution centered at zero. If there are m neurons, then each neuron's tuning curve is drawn independently from this Gaussian distribution.
 
 <p align=center>
 <img src="/assets/image_for_notes/efficient_coding_theory/efficient-coding-figure2.png" alt="Input space and its dual space" width = "600" align="center"><br />
@@ -58,7 +58,7 @@ to represent the random vector of input stimuli in the input space, $ {\bf W} = 
 
 
 
-The optimization problem now is to find the gaussian distribution that have the sharpest discrimination, with the firing rate range being constrained. <br /> <br />
+The optimization problem now is to find the Gaussian distribution that has the sharpest discrimination, with the firing rate range being constrained. <br /> <br />
 
 Here both the gaussian distribution in the input space and the dual space is center at 0, so their distribution are only determined by the covariance matrix $ C, C_w $ respectively(Figure 2). where $ C = E({\bf XX^T}) $, $ C_w = E({\bf WW^T}) $
 I apply the firing rate constraint here as $Var({\bf XW})=E({\bf XWW^T X^T}) = constant$ <br />
@@ -78,8 +78,8 @@ The solution for this problem is that $ C_{w_{opt}} = \frac{a}{n} \bigotimes C^{
 
 <h3>Biological meaning</h3>
 
-We sometimes can find this scenario in real experiments. For example: an animal need to view a sequence of images, there are many dimensions here, but we just care about two of them. 1. how bright the images are and 2. How large the images are.
-The pictures lay in a two dimensional space that we care about. and experimenters record neurons in an certain brain area, trying to find whether there are neurons responding to either of the dimension, some neurons only respond to the brightness of the images, some only respond to the size of the images, some neuron respond to both, and some respond to neither. Now the case is that if the brightness and the size of the images are correlated, for example, images that are bigger also tends to be brighter. In order to best discriminate the brightness from size, how should the neurons as a population tuning to this two dimension? This question can be easily converted to the optimization problem that we stated above.<br /> <br />
+We sometimes can find this scenario in real experiments. For example, an animal needs to view a sequence of images. The images are in a high dimensional space, but we only care about two of them. 1) How bright the images are, and 2) How large the images are.
+The pictures lay in a two-dimensional space that we care about. And experimenters record neurons in a certain brain area, trying to find whether there are neurons responding to either of the dimension. Some neurons only respond to the brightness of the images, while some only respond to the size of the images, some neurons respond to both or neither. If the brightness and the size of the images are correlated, for example, images that are bigger also tend to be brighter. In order to best discriminate the brightness from size, how should the neurons as a population tuning to these two dimension? This question can be converted to the optimization problem that we stated above.<br /> <br />
 
 
 In one experiment<sup>4</sup>, the authors found that locally the neuron's covariance matrix is roughly the inverse of the task variables covariance matrix, and this leads to "whitening operation", which optimize the mutual information.<br /><br />
@@ -138,7 +138,7 @@ Hence, in this simple case, $ C_{w_{opt}} = \frac{a}{n} \bigotimes C^{-1} $<br /
 
 Secondly, let's consider the general case：<br /><br />
 
-For the input vector with arbitrary gaussian distribution centered at 0, the covariance matrix C can be an arbitary positive definit matrix.<br /><br />
+For the input vector with arbitrary Gaussian distribution centered at 0, the covariance matrix C can be an arbitary positive definit matrix.<br /><br />
 We change the basis of the input space such that the covariance matrix becomes an identity matrix, then the general case can be transformed to the first case:<br /> <br />
 Denote $ A $ as the change of basis matrix, $ {\bf X} $ as the random vector under old basis, and $ {\bf X'}$ as the random vector under new coordinates
 $ {\bf X} = A{\bf X'} $, where $ {\bf X'} \sim N(0, Id) $,  $ C = E({\bf XX^T}) = E(A{\bf X'X'^T}A^T) = AA^T$<br /><br />
@@ -165,10 +165,10 @@ Thus we have $ C_{w_{opt}} = \frac{a}{n} \bigotimes C^{-1} $<br/><br />
 
 
 <h3>Open discussion:</h3>
-We can consider a more general efficient coding problem. The input space can be an arbitrary manifold X, and the input stimuli have a given probability distribution on the manifold with probability density function $ f_X $. A neuron's tuning curve is a smooth function on the manifold. Each neuron's tuning curve is drawn independently from a set of functions(function space) with a certain probability distribution on the function space. We want to know what is the probability distribution on the function space that maximize certain objective function.<br /><br />
+We can consider a more general efficient coding problem. The input space can be an arbitrary manifold X, and the input stimuli have a given probability distribution on the manifold with probability density function $ f_X $. A neuron's tuning curve is a smooth function on the manifold. Each neuron's tuning curve is drawn independently from a set of functions(function space) with a certain probability distribution on the function space. We want to know the probability distribution on this function space that can maximize certain objective function.<br /><br />
 
 An example objective function could be 
-$$ E_{w \in W}(\int_X |dw| f_X d \sigma) $$ 
+$$ E_{w \in W}(\int_X |dw| f_X d \sigma) $$
 
 
 
