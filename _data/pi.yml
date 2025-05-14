@@ -1,0 +1,18 @@
+- name: Kaining Zhang
+  photo: headshot2.jpg
+  info: Postdoc in Theoretical Neuroscience, Washington University in St. Louis
+  email: kaining@wustl.edu
+  github: https://github.com/kalfton
+  linkedin: https://www.linkedin.com/in/kaining-zhang-160a44123/
+  # researchgate: https://www.researchgate.net/
+  scholar: https://scholar.google.com/citations?user=DjL8nrkAAAAJ&hl=en
+  # cv: cv/cv.pdf
+  # Change the items in "education" you have (up to 6)
+  education:
+    [
+      "(2022) Ph.D. Biomedical Engineering, Washington University in St. Louis",
+      "(2016) B.S. Physics, University of Science and Technology of China (USTC)",
+    ]
+
+  educationshort:
+    ["(2022) Ph.D. BME, WashU", "(2016) B.S. Physics, USTC"]

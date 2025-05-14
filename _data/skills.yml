@@ -1,0 +1,14 @@
+- name: Mathematics
+  info: Differential Equations, Mathematical Logic, Graph Theory, Probability and Stochastic Processes, Measure Theory, Functional Analysis, Information Theory, Algebraic Topology, Differential Topology
+- name: Physics
+  info: Computational Physics, Statistical Mechanics, Solid State Physics
+- name: Engineering
+  info: Dynamical Systems, Control Theory, Optimization and Optimal Control
+- name: Computer Science
+  info: Numerical Methods, Advanced Algorithms, Deep Reinforcement Learning, Natural Language Processing
+- name: Biology and Neuroscience
+  info: Bioelectric Phenomena, Neural Systems
+- name: Programming Languages
+  info: C/C++, Python, MATLAB, Java, Julia
+- name: Experimental Skills
+  info: Five year experiences of electrophysiology recording, behavioral task design, and spiking sorting

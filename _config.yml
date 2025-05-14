@@ -1,100 +1,92 @@
-# SITE CONFIGURATION
-baseurl: #"/"
-url: # I don't know what it is 
+# Site settings
+title: Kaining Zhang
+email: kaining@wustl.edu
+description: Academic webpage of Kaining
+baseurl: ""
+url: ""
 
-# THEME-SPECIFIC CONFIGURATION
-theme_settings:
-  # Meta
-  title: Homepage
-  avatar: photo/selfie1.png
-  favicon: assets/favicon.ico
-  gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+# Google analytics ID: Uncomment and your own, if you like
+google_analytics: UA-188052654-1
+# google_analytics_4: XXX
+# google_tag_manager: XXX
 
-  # Header and footer text
-  header_text: >
-     <img src="photo\selfie1.png" alt="Kaining">
-  header_text_feature_image: 
-  footer_text: >
-   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/rohanchandra/type-theme">Type Theme</a>
+# Footer info
+affiliation: >
+  Washington University in St. Louis
 
-  # Icons
-  rss: false
-  email_address: kaining@wustl.edu # Full email address, e.g. "sam@example.com"
-  behance:
-  bitbucket:
-  dribbble:
-  facebook:
-  flickr:
-  gitlab:
-  github: 
-  gitter:
-  google_plus:
-  instagram:
-  linkedin:  # Full URL
-  pinterest:
-  reddit:
-  soundcloud:
-  stack_exchange:  # Full URL
-  steam:
-  tumblr:
-  twitter:
-  wordpress:
-  youtube:
+location: >
+  660 S Euclid Ave, <br/>
+  St. Louis, MO 63110
 
-  # header link:
-  papers: /papers
-  str_papers: "Papers"
+contact: >
+  <a href="mailto:kaining@wustl.edu" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Kaining via email</a> <br/>
+# <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
 
-  # Scripts
-  google_analytics: UA-188052654-1 # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname: kaining
-  katex: true # Enable if using math markup
-  search: false # Enable the search feature
+# Pages shown in navbar
+nav_pages:
+  - name: about
+  - name: publications
+  # - name: talks
+  - name: research
+  # - name: software
+  # - name: team
+  # - name: teaching
+  - name: blogs
 
-  # Localization strings
-  str_follow_on: "Follow on"
-  str_rss_follow: "Follow RSS feed"
-  str_email: "Email"
-  str_next_post: "Next post"
-  str_previous_post: "Previous post"
-  str_next_page: "Next"
-  str_previous_page: "Prev"
-  str_continue_reading: "Continue reading"
-  str_javascript_required_disqus: "Please enable JavaScript to view comments."
-  str_search_no_results: "No results found."
+include:
+  - .htaccess
+  - _pages
 
-  # Colours, typography and padding
-  # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
-
-  # Post navigation
-  post_navigation: true
-
-# PAGINATION
-paginate: 5
-paginate_path: "blog/page:num"
-
-# BUILD SETTINGS
+# Conversion
 markdown: kramdown
 highlighter: rouge
-sass:
-  sass_dir: _sass
-  style: :compressed
-plugins: [jekyll-paginate]
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+  parse_block_html: true # default for kramdown is false. This will enable using Markdown links
+
+plugins: ["jekyll/scholar"]
+
+scholar:
+  last_name: Zhang
+  first_name: [Kaining]
+
+  style: citesty
+  locale: en
+
+  source: /assets/
+  bibliography: ref.bib
+  bibliography_template: bibtemplate
+  sort_by: year, month
+  order: descending
+
+  replace_strings: true
+  join_strings: true
+
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
+
+  query: "@*"
+
+  # bibliography_list_attributes:
+  #   reversed: "reversed"
+
 exclude:
   - Gemfile
   - Gemfile.lock
-
-collections:
-  Academic_notes:
-    output: true
-    permalink: /:collection/:name
-  tech_notes:
-    output: true
-    permalink: /:collection/:name
-  thoughts:
-    output: true
-    permalink: /:collection/:name
-
-    
+  - update_boostrap.sh
+  - switch_theme.sh
+  - tags
+  - Rakefile
