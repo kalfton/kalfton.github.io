@@ -1,9 +1,9 @@
 # Site settings
 title: Kaining Zhang
 email: kaining@wustl.edu
-description: Academic webpage of Kaining
-baseurl: "https://kalfton.github.io"
-url: ""
+description: Academic webpage of Kaining Zhang
+baseurl: ""
+url: "https://kalfton.github.io"
 
 # Google analytics ID: Uncomment and your own, if you like
 google_analytics: UA-188052654-1
