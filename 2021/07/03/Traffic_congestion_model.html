@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A model of traffic congestion - Kaining Zhang</title>
+  <meta name="description" content="Academic webpage of Kaining">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2021/07/03/Traffic_congestion_model.html">
+  <link rel="shortcut icon" type ="image/x-icon" href="http://localhost:4000/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
+  <link rel="preconnect" href="https://f.vimeocdn.com">
+
+
+
+
+<script>
+MathJax = {
+    tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+    tags: 'ams'  // should be 'ams', 'none', or 'all' }. This line makes the equation numbering and labeling work
+    }, 
+    svg: {
+    fontCache: 'global'
+    }
+};
+</script>
+<script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script> 
+
+</head>
+
+
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:4000/">
+     <img src="http://localhost:4000/favicon.ico" width="30" height="30" style="margin-right:5px" class="d-inline-block align-top" alt="">
+      Kaining Zhang
+    </a>
+    <button class="toggler navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="http://localhost:4000/">Home</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/about">About</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/publications">Publications</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/research">Research</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/blogs">Blogs</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">A model of traffic congestion</h1>
+    <p class="post-meta"><time datetime="2021-07-03T00:00:00-05:00" itemprop="datePublished">Jul 3, 2021</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Kaining Zhang</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The idea came to my mind when I was blocked in traffic congestion on the highway. I saw the cars stopped and moved, which motivated me to model the traffic congestion. Later I found that a more general model has already been found, and it is called the “Lighthill-Whitham-Richards traffic flow model”<sup>1</sup>.</p>
+
+<p>When there is local congestion, the cars in the back drive into the congestion area, and the cars in the front drive out of the congestion area. In the meantime, the congestion area gradually moves toward upstream of the traffic. This phenomena is called traffic wave<sup>2</sup>.</p>
+
+<p>To model the traffic wave, I need to first make some simplifications.
+Here I only consider a road with one line. The average car length is $b$.
+And all drivers follow the 3-second rule: when someone is driving, the distance between their vehicle and the vehicle in front of them should be at least 3 seconds times their speed. This rule determines the relation between a vehicle’s speed and the distance between the vehicle and its previous vehicle.</p>
+
+\[a* v \leq L \text{, where } a = 3s \qquad \text{(1)}\]
+
+<p>When the traffic is heavy, the inequality becomes equality.</p>
+
+\[a* v = L \text{, where } a = 3s \qquad \text{(2)}\]
+
+<p>By (2), we can derive a relationship between the speed of cars at a spot and the density of the cars around that spot.</p>
+
+\[d_{car} = \frac{1}{L+b} =\frac{1}{av+b} \qquad \text{(3)}\]
+
+<p>I.e.</p>
+
+\[v = \frac{1}{a* d_{car}} - \frac{b}{a} \qquad \text{(4)}\]
+
+<p>Now we can use (4) and the principle of conservation of mass in fluid mechanics to write down the equation.</p>
+
+<p>the principle of conservation of mass gives the equation:</p>
+
+\[\frac{\partial d_{car}}{\partial t} =  -\frac{\partial (v * d_{car})}{\partial x}\]
+
+<p>Substitute $v$ with (4).</p>
+
+\[\frac{\partial d_{car}}{\partial t} = -\frac{\partial ((\frac{1}{a* d_{car}} - \frac{b}{a})* d_{car})}{\partial x}\]
+
+<p>And simplify it:</p>
+
+\[\frac{\partial d_{car}}{\partial t} = \frac{b}{a} \frac{\partial d_{car}}{\partial x} \qquad \text{(5)}\]
+
+<p>Equation 5 has the general solution:</p>
+
+<p>\(d_{car} = f(x + \frac{b}{a} * t)\), where \(f(\cdot)\) can be arbitrary \(C^1\) function.</p>
+
+<p>This solution shows that the density of the cars moves with speed $ \frac{b}{a} $ in the opposite direction of the cars. (Traffic wave)</p>
+
+<p>Lastly, we can substitute $a$ and $b$ with actual numbers, the average length of a car is about $4.5m$, and we should also include the distance between the cars when they stop, and we give it an extra of $2m$. So $b = 4.5m+2m = 6.5m$.</p>
+
+<p>$a = 3s$, by the 3 second rule.</p>
+
+<p>In theory, the speed of the traffic wave is about $ 6.5m/3s \approx 2.2m/s \approx 5 mph $.</p>
+
+<p>Here is a visualization of the solution:</p>
+
+<div align="center">
+  <p><img src="\assets\image_for_notes\traffic_congestion\figure-2.jpg" alt="Figure 1" width="900" align="center" /></p>
+</div>
+
+<p>In reality, the actual speed of traffic wave is higher than this<sup>3</sup>, and one of the reasons could be that my estimation a = 3s is higher than the rule that people actually use in traffic congestion. <br /><br /></p>
+
+<p>In Lighthill-Whitham-Richards traffic flow model, it didn’t use the 3 second rule. Instead, it directly gives a nonlinear relation between the traffic flow ($ v * d_{car} $) and the density ($ d_{car} $).<sup>1</sup> 
+And if the relationship between the traffic flow and the density is linear, then the Lighthill-Whitham-Richards traffic flow model converges to my model.</p>
+
+<h3>Reference:</h3>
+
+<p>[1]. https://sboyles.github.io/teaching/ce392d/5-lwrmodel.pdf<br /></p>
+
+<p>[2]. https://wikiwaves.org/Traffic_Waves<br /></p>
+
+<p>[3]. https://www.youtube.com/watch?v=Suugn-p5C1M<br /></p>
+
+<p>[4]. https://www.springer.com/gp/book/9783540207160<br /></p>
+
+<p>[5]. https://www.fhwa.dot.gov/publications/research/operations/tft/chap5.pdf<br /></p>
+
+
+  </div>
+
+</article>
+      </div>
+    </div>
+
+    <br/>
+<section id="footer">
+<div class="container-footer">
+  <div class="panel-footer">
+	  <div class="row">
+		<div class="col-sm-4">
+		<h5>Kaining Zhang 🌈</h5>
+            <p>Washington University in St. Louis
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Contact</h5>	
+            <p><a href="mailto:kaining@wustl.edu" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Kaining via email</a> <br/>
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Work Address</h5>	
+            <p>660 S Euclid Ave, <br/> St. Louis, MO 63110
+</p>
+		</div>
+	  </div>
+
+      <center><p>&copy 2025 Kaining Zhang </p></center>
+	</div>
+  </div>
+</div>
+
+<script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A force analysis of Skiing (or Snowboarding) - Kaining Zhang</title>
+  <meta name="description" content="Academic webpage of Kaining">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2022/12/04/Theory_of_skiing_snowboarding.html">
+  <link rel="shortcut icon" type ="image/x-icon" href="http://localhost:4000/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
+  <link rel="preconnect" href="https://f.vimeocdn.com">
+
+
+
+
+<script>
+MathJax = {
+    tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+    tags: 'ams'  // should be 'ams', 'none', or 'all' }. This line makes the equation numbering and labeling work
+    }, 
+    svg: {
+    fontCache: 'global'
+    }
+};
+</script>
+<script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script> 
+
+</head>
+
+
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:4000/">
+     <img src="http://localhost:4000/favicon.ico" width="30" height="30" style="margin-right:5px" class="d-inline-block align-top" alt="">
+      Kaining Zhang
+    </a>
+    <button class="toggler navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="http://localhost:4000/">Home</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/about">About</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/publications">Publications</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/research">Research</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/blogs">Blogs</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">A force analysis of Skiing (or Snowboarding)</h1>
+    <p class="post-meta"><time datetime="2022-12-04T00:00:00-06:00" itemprop="datePublished">Dec 4, 2022</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Kaining Zhang</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>When skiing downhill, skiers use turns to control their speed. During each turn, they must <strong>switch edges</strong> and <strong>move their body up and down</strong> to apply periodic force to the skis, thereby modulating their speed.</p>
+
+<p>There are two primary techniques to control this periodic force: <strong>upweighting</strong> and <strong>downweighting</strong>, which seems to give opposite instructions. Here I want to unify this two techiques, and explain why they seems to be different.</p>
+
+<p>To understand this process, I model the force applied to the skis as a periodic function (considering only the vertical direction). For simplicity, I use a cosine wave to represent the force the skier applies to the board:</p>
+
+\[f(t) = \cos(\omega t) + C_0 \tag{1}\]
+
+<p>To keep the speed roughly constant, the skier must make turns. During this process, the vertical force should <strong>maximized during the turn</strong> and <strong>minimized during the edge switch</strong>. This is a universal law in skiing.</p>
+
+<p>Let $mg$ denote the gravitational force. The skier’s vertical speed $v(t)$ can be approximated by integrating the net vertical force:</p>
+
+\[v(t) = \int (f - mg) \, dt = \frac{1}{\omega} \sin(\omega t) + (C_0 - mg)t + C_1 \tag{2}\]
+
+<p>For the skier’s speed to remain stable and periodic, we require:</p>
+
+\[v(t) = v(t + T), \quad \text{where } T = \frac{2\pi}{\omega}\]
+
+<p>This periodicity condition implies $C_0 = mg$, simplifying equation (2) to:</p>
+
+\[v(t) = \frac{1}{\omega} \sin(\omega t) + C_1 \tag{3}\]
+
+<p>Integrating once more, we obtain the vertical position of the skier’s center of gravity, $x(t)$:</p>
+
+\[x(t) = \int v(t) \, dt = -\frac{1}{\omega^2} \cos(\omega t) + C_1 t + C_2 \tag{4}\]
+
+<p>Comparing equations (1) and (4), we see that the periodic components are <strong>out of phase</strong>: when the applied force is maximized (i.e., during a turn), the center of gravity is at its lowest. Conversely, during edge switching (when force is minimized), the center of gravity is highest.</p>
+
+<hr />
+
+<p>In practice, the skier <strong>move their center of gravity up and down</strong> to generate the desired pressure on the skis. This leads to two contrasting techniques:</p>
+
+<ul>
+  <li>
+    <p><strong>Upweighting</strong>: The skier raises and lowers their <strong>upper body</strong> to control the center of gravity. During the transition between turns, the skier’s body is extended, as they lift their upper body to raise their center of gravity.</p>
+  </li>
+  <li>
+    <p><strong>Downweighting</strong>: The skier bends and extends their <strong>lower body</strong> (i.e., legs) to modulate the center of gravity. In this technique, the skier is bent during transitions, as they raise their legs up to raise their center of gravity.</p>
+  </li>
+</ul>
+
+<p>Both methods aim to manipulate the skier’s weight distribution to control the pressure on the skis—but they involve <strong>opposite body movements</strong>.</p>
+
+<hr />
+
+
+  </div>
+
+</article>
+      </div>
+    </div>
+
+    <br/>
+<section id="footer">
+<div class="container-footer">
+  <div class="panel-footer">
+	  <div class="row">
+		<div class="col-sm-4">
+		<h5>Kaining Zhang 🌈</h5>
+            <p>Washington University in St. Louis
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Contact</h5>	
+            <p><a href="mailto:kaining@wustl.edu" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Kaining via email</a> <br/>
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Work Address</h5>	
+            <p>660 S Euclid Ave, <br/> St. Louis, MO 63110
+</p>
+		</div>
+	  </div>
+
+      <center><p>&copy 2025 Kaining Zhang </p></center>
+	</div>
+  </div>
+</div>
+
+<script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+
+</html>

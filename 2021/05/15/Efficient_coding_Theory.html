@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Some thoughts about efficient coding - Kaining Zhang</title>
+  <meta name="description" content="Academic webpage of Kaining">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2021/05/15/Efficient_coding_Theory.html">
+  <link rel="shortcut icon" type ="image/x-icon" href="http://localhost:4000/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
+  <link rel="preconnect" href="https://f.vimeocdn.com">
+
+
+
+
+<script>
+MathJax = {
+    tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+    tags: 'ams'  // should be 'ams', 'none', or 'all' }. This line makes the equation numbering and labeling work
+    }, 
+    svg: {
+    fontCache: 'global'
+    }
+};
+</script>
+<script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script> 
+
+</head>
+
+
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="http://localhost:4000/">
+     <img src="http://localhost:4000/favicon.ico" width="30" height="30" style="margin-right:5px" class="d-inline-block align-top" alt="">
+      Kaining Zhang
+    </a>
+    <button class="toggler navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="http://localhost:4000/">Home</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/about">About</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/publications">Publications</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/research">Research</a>
+                   
+                <a class="nav-item nav-link" href="http://localhost:4000/blogs">Blogs</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Some thoughts about efficient coding</h1>
+    <p class="post-meta"><time datetime="2021-05-15T00:00:00-05:00" itemprop="datePublished">May 15, 2021</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Kaining Zhang</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Neurons in the brain respond to external stimuli. In the framework of efficient coding theory, there should exists an objective function which the neurons’ response optimizes.</p>
+
+<p>We can describe the efficient coding problem in the framework of mapping between spaces:</p>
+
+<div align="center">
+  <p><img src="/assets/image_for_notes/efficient_coding_theory/efficient-coding-figure1.png" alt="Input space transformation function" width="600" align="center" /></p>
+
+  <p>Figure 1</p>
+</div>
+
+<p>The input stimuli lie in an m-dimensional space(Input space). For example, if the stimuli are black and white images with m pixels, then each dimension can represent the brightness of a pixel.  <br /> <br /></p>
+
+<p>Then, there is a group of neurons; each neuron uses its firing rate to encode objects. Each neuron’s firing rate is a function on the input space(tuning curve), and all neurons’ firing rates in the group form an r-dimensional space. (r is the number of neurons) <br /> <br /></p>
+
+<p>If ignoring the noise of neuronal coding, each stimulus evokes a deterministic response in the neuron group, and this forms a map from the input space to the neuron space (We call it the transformation function: $\mathbb{R}^m	\rightarrow\mathbb{R}^r	$, Figure 1). With the assumption that the response of each neuron to the input space is continuous (i.e., the tuning curve is continuous), then the transformation function is also continuous.<br /> <br /></p>
+
+<p>A usual objective function is the information entropy of the neurons’ response distribution or the mutual information of the maps. 
+Given a group of neurons, if they encode the information of the stimuli as much as possible (maximizing the information entropy), then we consider that the neuronal coding is efficient<sup>1,2</sup>. Whether encoding is efficient depends not only on the encoding map but also on the statistics of the external stimuli.<br /> <br /></p>
+
+<p>Another way to describe efficient coding with this objective function is that the neurons’ firing rates should discriminate more at the place where the objects’ appearing probability is denser. <br /> <br /></p>
+
+<p>Here I consider a specific scenario. I assume 1) the distribution of input stimuli is a multi-variable Gaussian distribution, centered at 0. 2) the transformation map is linear, i.e., for each neuron, the tuning curve on the input space is linear, thus it can be represented as a dot in the dual space of the input space. 3) neuron’s tuning curve is a random vector, and the representation in the dual space is a multi-variable Gaussian distribution centered at zero. If there are m neurons, then each neuron’s tuning curve is drawn independently from this Gaussian distribution.</p>
+
+<div align="center">
+  <p><img src="/assets/image_for_notes/efficient_coding_theory/efficient-coding-figure2.png" alt="Input space and its dual space" width="600" align="center" /><br /></p>
+
+  <p>Figure 2 | an Axample when dimension = 2</p>
+</div>
+
+<p>We use the notation 
+${\bf X} =  \begin{bmatrix} {\bf x_1} \\ \vdots \\ {\bf x_n} \end{bmatrix} $
+to represent the random vector of input stimuli in the input space, $ {\bf W} = \begin{bmatrix} {\bf w_1} \\ \vdots \\ {\bf w_n} \end{bmatrix} $ to represent the random vector of neurons in the dual space. (Bold notation here means random variable)<br /> <br /></p>
+
+<p>(Relationship of input space and its dual space) Given a neuron represented as $  \left[ \begin{array}{c}  w_1 \\ \vdots \\ w_n \end{array} \right] $, then this neuron’s tuning curve in the input space is $ n(x_1, … x_n) = w_1 x_1 + … + w_n x_n $, i.e., $ w_i = \frac{\partial n}{\partial x_i} $</p>
+
+<p>The optimization problem now is to find the Gaussian distribution that has the sharpest discrimination, with the firing rate range being constrained. <br /> <br /></p>
+
+<p>Here both the gaussian distribution in the input space and the dual space is center at 0, so their distribution are only determined by the covariance matrix $ C, C_w $ respectively (Figure 2), where $ C = E({\bf XX^T}) $, $ C_w = E({\bf WW^T}) $.
+The firing rate constraint is that the variance of the firing rate across neurons equals to a constant: $Var({\bf XW})=E({\bf XWW^T X^T}) = constant$ <br /></p>
+
+<p>The objective function is $ det(C_w) $, intuitively this term describes how wide the gaussian distribution is (proportional to the volume of 95% confidence region, for example)<br /><br /></p>
+
+<p>In summary, the optimization problem for efficient coding in this senario can be written as:</p>
+
+<p><strong>Given C, maximizing $det(C_w)$ with the constraint that $Var(XW) = a &gt;0 $ (a is a constant).</strong><br /> <br /></p>
+
+<p>We can derive the solution for this problem: 
+\begin{equation}
+C_{w_{opt}} = \frac{a}{n} \bigotimes C^{-1}
+\end{equation}</p>
+
+<p>$\bigotimes$ is the notation for multiplying every element of the matrix ($C^{-1}$) by a number ($\frac{a}{n}$). The details of the proof is at the end.<br /></p>
+
+<h3>Biological meaning</h3>
+
+<p>We can be apply this solution to experiments.</p>
+
+<p>Here is a simple example of a two dimensional senario. In experiment, an animal needs to view a sequence of images. The images are in a high dimensional space, but we only care about two of them. 1) How bright the images are, and 2) How large the images are. Thus, the pictures lay in a two-dimensional space one corresponding to the brightness of the image and the other corresponding to the size. Experimenters record neurons in a certain brain area, trying to find whether there are neurons responding to either of the dimension. Some neurons only respond to the brightness of the images, while some only respond to the size of the images, some neurons respond to both or neither. If the brightness and the size of the images are correlated, for example, images that are bigger also tend to be brighter. In order to best discriminate the brightness from size, how should the neurons as a population tuning to these two dimension?</p>
+
+<p>This question can be converted to the optimization problem that we stated above. Equation (1) predicts that if the brightness and the size of the images are positively correlated, then neurons that respond positively to brightness should tend to negatively respond to the size, and vice versa. <br /></p>
+
+<p>In one experiment<sup>4</sup>, the authors have found that locally the neuron’s covariance matrix is roughly the inverse of the task variables covariance matrix, and this leads to “whitening operation”, which optimize the mutual information.<br /><br /></p>
+
+<h3>Proof of the optimization problem’s solution:</h3>
+
+<p>Firstly Let’s consider a simple case:
+Given $ C $ as an Identity matrix $ C = Id $, we want to find out the optimal solution of $C_{w} $, noted as $ C_{w_{opt}} $.</p>
+
+<p>$ C$ is an Identity matrix,
+\(E(\mathbf{x_i x_j}) =
+\begin{cases}
+0, &amp; \text{if } i \ne j \\
+1, &amp; \text{if } i = j
+\end{cases}\)</p>
+
+<p>The constraint function can be written as:<br />
+\(\begin{aligned}
+&amp; a = Var({\bf XW}) = E({\bf X W W^T X^T}) \\
+&amp; = E({\bf X} C_w {\bf X}) \text{ , (} {\bf W} \text{ and } {\bf X} \text{ are independent)}\\
+&amp; = \sum_{i} E(C_w(i, i)), C \text{ is an identity matrix}\\
+&amp; = tr(C_w)
+\end{aligned}\)
+<br /><br /></p>
+
+<p>For objective function:<br />
+$ C_w $ is a positive definite matrix, so it has $n$ positive eigen values: <br />
+$ \sigma_1^2, \sigma_2^2,…, \sigma_n^2 $ <br />
+And $ det(C_w) = \sigma_1^2 * \sigma_2^2 * … * \sigma_n^2 $<br /><br /></p>
+
+<p>from the constraint condition we know:<br />
+$ \sigma_1^2 + \sigma_2^2 + … + \sigma_n^2 = tr(C_w) = a $<br /><br /></p>
+
+<p>By the Arithmetic Mean-Geometric Mean inequality we can get $ det(C_w) = \sigma_1^2 * \sigma_2^2 * … * \sigma_n^2 &lt;= (a/n)^n $ , and the equality is reached when  $ \sigma_1^2 = \sigma_2^2 = … = \sigma_n^2 = \frac{a}{n} $<br /><br /></p>
+
+<p>\(\Rightarrow 
+C_{w_{opt}} = 
+\begin{bmatrix}
+    a/n &amp; 0 &amp; \dots  &amp; 0 \\
+    0 &amp; a/n &amp; \dots  &amp; 0 \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    0 &amp; 0 &amp; \dots  &amp; a/n
+\end{bmatrix}
+ = \frac{a}{n} \bigotimes Id\)
+<br /><br /></p>
+
+<p>Hence, in this simple case, $ C_{w_{opt}} = \frac{a}{n} \bigotimes C^{-1} $<br /><br /></p>
+
+<p>Now let’s consider the general case.</p>
+
+<p>The input vector with arbitrary Gaussian distribution is centered at 0, and the covariance matrix C can be an arbitary positive definit matrix.</p>
+
+<p>We change the basis of the input space such that the covariance matrix becomes an identity matrix, then the general case can be transformed to the first case:<br /> <br />
+Denote $ A $ as the change of basis matrix, $ {\bf X} $ as the random vector under old basis, and $ {\bf X’}$ as the random vector under new coordinates
+$ {\bf X} = A{\bf X’} $, where $ {\bf X’} \sim N(0, Id) $,  $ C = E({\bf XX^T}) = E(A{\bf X’X’^T}A^T) = AA^T$<br /><br /></p>
+
+<p>The dual space’s basis should change accordingly.<sup>5 </sup> <br /></p>
+
+<p>Denote $ {\bf W } $ as the random vector under old dual basis, $ {\bf W’}$ as the random vector under new dual basis, we have the relation:
+$ {\bf W} = (A^{-1})^T {\bf W’} $<br /><br /></p>
+
+<p>In the new basis, the solution of the optimization problem is given in case 1, $ C’_ {W_{opt}} = E({\bf W’W’^T}) = \frac{a}{n} \bigotimes Id $. In the old basis the solution is written as: <br /><br />
+\(\begin{aligned}
+C_{w_{opt}} &amp; =  E({\bf WW^T}) = E((A^{-1})^T {\bf W' W'^T} (A^{-1}))\\
+&amp; =  (A^{-1})^T (\frac{a}{n} \bigotimes Id) A^{-1}\\
+&amp; = \frac{a}{n} \bigotimes (A^{-1})^T A^{-1}\\
+&amp; = \frac{a}{n} \bigotimes (A A^T)^{-1}\\
+&amp; = \frac{a}{n} \bigotimes C^{-1}\\
+\end{aligned}\)</p>
+
+<p>Thus we have $ C_{w_{opt}} = \frac{a}{n} \bigotimes C^{-1} $<br /><br /></p>
+
+<h3>Open discussion:</h3>
+<p>We can consider a even more general efficient coding problem. The input space can be an arbitrary manifold X, and the input stimuli have a given probability distribution on the manifold with probability density function $ f_X $. A neuron’s tuning curve is a smooth function on the manifold. Each neuron’s tuning curve is drawn independently from a set of functions(function space) with a certain probability distribution on the function space. We want to know the probability distribution on this function space that can maximize certain objective function. For example, an objective function could be</p>
+
+\[E_{w \in W}(\int_X |dw| f_X d \sigma)\]
+
+<h3>Reference:</h3>
+<p>[1]. Barlow, H.B., 1961. Possible principles underlying the transformation of sensory messages. Sensory communication, 1(01).<br />
+[2]. Simoncelli, E.P. and Olshausen, B.A., 2001. Natural image statistics and neural representation. Annual review of neuroscience, 24(1), pp.1193-1216.<br />
+[3]. Park, I.M. and Pillow, J.W., 2017. Bayesian efficient coding. BioRxiv, p.178418.<br />
+[4]. Koay, S.A., Thiberge, S.Y., Brody, C.D. and Tank, D.W., 2019. Sequential and efficient neural-population coding of complex task information. bioRxiv, p.801654.<br />
+[5]. https://math.stackexchange.com/questions/950290/help-on-the-relationship-of-a-basis-and-a-dual-basis<br />
+[6]. https://en.wikipedia.org/wiki/Harmonic_map <br /></p>
+
+  </div>
+
+</article>
+      </div>
+    </div>
+
+    <br/>
+<section id="footer">
+<div class="container-footer">
+  <div class="panel-footer">
+	  <div class="row">
+		<div class="col-sm-4">
+		<h5>Kaining Zhang 🌈</h5>
+            <p>Washington University in St. Louis
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Contact</h5>	
+            <p><a href="mailto:kaining@wustl.edu" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Kaining via email</a> <br/>
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Work Address</h5>	
+            <p>660 S Euclid Ave, <br/> St. Louis, MO 63110
+</p>
+		</div>
+	  </div>
+
+      <center><p>&copy 2025 Kaining Zhang </p></center>
+	</div>
+  </div>
+</div>
+
+<script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+
+</html>
