@@ -3,6 +3,7 @@ layout: post
 title: A force analysis of Skiing (or Snowboarding)
 use_math : true
 published: true
+sitemap: true
 author: Kaining Zhang
 date:  Dec. 4th, 2022
 tags: [random]

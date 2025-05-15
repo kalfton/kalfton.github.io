@@ -3,6 +3,7 @@ layout: post
 title: A model of traffic congestion
 use_math : true
 published: true
+sitemap: true
 date:  July 3, 2021
 author: Kaining Zhang
 tags: [random, Math, traffic]

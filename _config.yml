@@ -90,3 +90,6 @@ exclude:
   - switch_theme.sh
   - tags
   - Rakefile
+
+plugins:
+  - jekyll-sitemap

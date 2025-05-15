@@ -2,7 +2,8 @@
 layout: post
 title: Some thoughts about efficient coding
 use_math : true
-published: ture
+published: true
+sitemap: false
 date:  May 15, 2021
 author: Kaining Zhang
 tags: [academic, optimization, neuroscience math]

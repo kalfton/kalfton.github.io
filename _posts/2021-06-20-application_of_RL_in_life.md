@@ -3,6 +3,7 @@ layout: post
 title: Life as an optimization problem
 use_math : true
 published: true
+sitemap: true
 date:  June 20, 2021
 author: Kaining Zhang
 tags: [random, optimization]
