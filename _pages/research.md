@@ -36,7 +36,7 @@ iframe {
 <div class="jumbotron">
 <div class="col-md-12 col-sm-12">
 <h4>Memory Capacity of Heterogeneous Hopfield networks</h4>
-<a href="https://www.biorxiv.org/content/10.1101/2024.09.25.615056v1">*[Preprint]*</a>
+<a href="https://journals.aps.org/prxlife/abstract/10.1103/qb9h-qxkx">*[Article]*</a>
 
 The classic Hopfield network, as a model of associative memory, assumes homogeneous connections and coding levels (i.e., activation rates of neurons in memory patterns). However, biological networks exhibit heterogeneous connection structures and coding levels. I derive an analytical formula for the memory capacity of such heterogeneous networks.
 
