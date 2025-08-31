@@ -56,7 +56,7 @@ This work bridges theoretical neuroscience and biological plausibility and offer
 <div class="jumbotron">
 <div class="col-md-12 col-sm-12">
 <h4>Novelty Signals Across Brain Areas and Their Adaptation</h4>
-<a href="https://www.cell.com/current-biology/fulltext/S0960-9822(18)31478-7">*[Article]*</a>
+<a href="https://www.cell.com/current-biology/fulltext/S0960-9822(22)00504-8">*[Article]*</a>
 
 This project explores how primates detect novel objects by examining the neural mechanisms underlying computations of recency (how recently a stimulus was experienced) and sensory surprise (unexpected violations of predictions about incoming stimuli), using high-channel electrophysiology in primates.
 
