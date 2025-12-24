@@ -8,13 +8,13 @@ permalink: /
 ### About me
 Hello! I am Kaining Zhang. 
 
-I recently joined the Quantitative life Sciences (QLS) department at International Centre for Theoretical Physics (ICTP) as an independent postdoc. My research interests center on biological models of memory and their links to other cognitive processes, including attention and decision-making.
+I recently joined the **Quantitative life Sciences (QLS)** department at **International Centre for Theoretical Physics (ICTP)** as an independent postdoc. My research interests center on biological models of memory and their links to other cognitive processes, including attention and decision-making.
 
-Previously, I worked as a postdoc with Gaia Tavoni at Washington University in St. Louis, where I studied memory systems using tools from statistical physics, such as Hopfield networks.
+Previously, I worked as a postdoc with **Gaia Tavoni** at **Washington University in St. Louis**, where I studied memory systems using tools from statistical physics, such as Hopfield networks.
 
-Before that, I completed my Ph.D. in Biomedical Engineering still at Washington University, where I worked in Ilya Monosov Lab. During my Ph.D., I conducted experiments and recorded electrophysiology data to study how the brain processes novelty, surprise, and uncertainty.
+Before that, I completed my Ph.D. in **Biomedical Engineering** still at Washington University, where I worked in **Ilya Monosov** Lab. During my Ph.D., I conducted experiments and recorded electrophysiology data to study how the brain processes novelty, surprise, and uncertainty.
 
-I received my bachelor’s degree in Physics from University of Science and Technology of China (USTC).
+I received my bachelor’s degree in Physics from **University of Science and Technology of China (USTC)**.
 
 My general interest is in uncovering the underlying principles and logic behind phenomena in both the natural and social worlds.
 
