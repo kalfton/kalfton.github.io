@@ -23,6 +23,4 @@ Liquid templating language: https://jekyllrb.com/docs/liquid/
 5. encounter error: Invalid argument @ rb_sysopen in feed.xml
 solution: delete feed.xml, and regenerate the website
 
-To do: change my front page color from green to white: read the readme, there might be instructions.
-margin use percentage rather than px
-use "layouts" to format a webpage. 
+6. Use "rake publish" to directly push the website to the target branch to publish the change (coded in Rakefile)

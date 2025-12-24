@@ -6,15 +6,19 @@ permalink: /
 ---
 
 ### About me
-Hello! I am Kaining Zhang, currently a postdoctoral researcher in the <a href="https://neuroscience.wustl.edu/people/gaia-tavoni-phd/">Gaia Tavoni Lab</a>. I study the memory systems using tools from statistical physics such as Hopfield networks.
+Hello! I am Kaining Zhang. 
 
-Previously, I completed my Ph.D. in Biomedical Engineering at Washington University in St. Louis, where I worked with <a href="https://neuroscience.wustl.edu/people/ilya-monosov-phd/">Ilya Monosov</a>. During my Ph.D., I used experimental approaches to study how the brain processes novelty, surprise, and uncertainty.
+I recently joined the Quantitative life Sciences department at International Centre for Theoretical Physics (ICTP) as an independent postdoc. My research interests center on biological models of memory and their links to other cognitive processes, including attention and decision-making.
 
-I received my bachelor's degree in Physics from the University of Science and Technology of China (USTC).
+Previously, I worked as a postdoc in <a href="https://neuroscience.wustl.edu/people/gaia-tavoni-phd/">Gaia Tavoni Lab</a>, where I studied memory systems using tools from statistical physics, such as Hopfield networks.
 
-I am passionate about uncovering the underlying principles and logic behind phenomena in both the natural and social world.
+Before that, I completed my Ph.D. in Biomedical Engineering at Washington University in St. Louis, where I worked with <a href="https://neuroscience.wustl.edu/people/ilya-monosov-phd/">Ilya Monosov</a>. During my Ph.D., I conducted experiments and recorded electrophysiology data to study how the brain processes novelty, surprise, and uncertainty.
 
-In the natural world, I enjoy studying mathematics and physics, which reveal the fundamental laws that govern our universe. I find joy in moments when learning reshapes my understanding and offers a new perspective on reality.
+I received my bachelor’s degree in Physics from University of Science and Technology of China (USTC).
+
+My general interest is in uncovering the underlying principles and logic behind phenomena in both the natural and social worlds.
+
+In the natural world, I enjoy studying mathematics and physics, which reveal the fundamental laws that govern our universe. I find joy in moments when learning reshapes my understanding.
 
 In the social world, I am fascinated by the behavior of humans and other animals, and the algorithms that may underlie these behaviors.
 
