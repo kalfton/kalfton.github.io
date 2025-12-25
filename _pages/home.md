@@ -12,7 +12,7 @@ I recently joined the **Quantitative life Sciences (QLS)** department at **Inter
 
 Previously, I worked as a postdoc with **Gaia Tavoni** at **Washington University in St. Louis**, where I studied memory systems using tools from statistical physics, such as Hopfield networks.
 
-Before that, I completed my Ph.D. in **Biomedical Engineering** still at Washington University, where I worked in **Ilya Monosov** Lab. During my Ph.D., I conducted experiments and recorded electrophysiology data to study how the brain processes novelty, surprise, and uncertainty.
+Before that, I completed my Ph.D. in **Biomedical Engineering** still at Washington University, where I worked in **Ilya Monosov** Lab, and was also advised by **Ethan Bromberg-Martin**. During my Ph.D., I conducted experiments and collected electrophysiology data to study how the brain processes novelty, surprise, and uncertainty.
 
 I received my bachelor’s degree in Physics from **University of Science and Technology of China (USTC)**.
 
