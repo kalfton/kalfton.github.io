@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Derivation of TAP Equation
+title: Derivation of the TAP Equation
 use_math : true
 published: true
 date:  Jan. 1, 2026
 author: Kaining Zhang
 tags: [academic, math]
 ---
-Here I derive the TAP equation directly from calculating the free energy (or the log of partition function).
+Here I derive the Thouless-Anderson-Palmer (TAP) equation directly from calculating the free energy (or the log of partition function).
 
 The free energy of the SK model $f_{\mathrm{TAP}}$ comprises two parts: the energy term and the entropy term.
 
