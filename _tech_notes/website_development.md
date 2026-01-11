@@ -2,6 +2,8 @@
 title: Technique tricks to develop the website
 position: Developer
 layout: page
+published: false
+
 ---
 
 1. How to use collection: https://jekyllrb.com/docs/collections/

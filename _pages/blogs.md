@@ -12,3 +12,12 @@ permalink: /blogs/
     </li>
   {% endfor %}
 </ul>
+
+Tech notes:
+<ul>
+  {% for post in site.tech_notes %}
+    <li> 
+      <h5>{{ post.date | date_to_string }}: <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title}}</a> </h5>
+    </li>
+  {% endfor %}
+</ul>

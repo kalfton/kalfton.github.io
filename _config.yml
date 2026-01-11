@@ -56,7 +56,7 @@ kramdown:
   enable_coderay: false
   parse_block_html: true # default for kramdown is false. This will enable using Markdown links
 
-plugins: ["jekyll/scholar"]
+# plugins: ["jekyll/scholar"]
 
 scholar:
   last_name: Zhang
@@ -92,4 +92,10 @@ exclude:
   - Rakefile
 
 plugins:
+  - jekyll-scholar
   - jekyll-sitemap
+
+collections:
+  tech_notes:
+    output: true
+    permalink: /tech-notes/:name/
