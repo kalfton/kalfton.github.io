@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Derivation of the TAP Equation - Kaining Zhang</title>
+  <meta name="description" content="Academic webpage of Kaining Zhang">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://kalfton.github.io/tech-notes/tap-equation-note/">
+  <link rel="shortcut icon" type ="image/x-icon" href="https://kalfton.github.io/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
+  <link rel="preconnect" href="https://f.vimeocdn.com">
+
+
+
+<!-- Google Analytics (original) -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-188052654-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','');</script>
+<!-- End Google Tag Manager -->
+
+
+
+<script>
+MathJax = {
+    tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+    tags: 'ams'  // should be 'ams', 'none', or 'all' }. This line makes the equation numbering and labeling work
+    }, 
+    svg: {
+    fontCache: 'global'
+    }
+};
+</script>
+<script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script> 
+
+</head>
+
+
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" href="https://kalfton.github.io/">
+     <img src="https://kalfton.github.io/favicon.ico" width="30" height="30" style="margin-right:5px" class="d-inline-block align-top" alt="">
+      Kaining Zhang
+    </a>
+    <button class="toggler navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="https://kalfton.github.io/">Home</a>
+                   
+                <a class="nav-item nav-link" href="https://kalfton.github.io/about">About</a>
+                   
+                <a class="nav-item nav-link" href="https://kalfton.github.io/publications">Publications</a>
+                   
+                <a class="nav-item nav-link" href="https://kalfton.github.io/research">Research</a>
+                   
+                <a class="nav-item nav-link" href="https://kalfton.github.io/blogs">Blogs</a>
+            
+        </div>
+    </div>
+</nav>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Derivation of the TAP Equation</h1>
+    <p class="post-meta"><time datetime="2026-01-01T00:00:00+01:00" itemprop="datePublished">Jan 1, 2026</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Kaining Zhang</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Here I derive the Thouless-Anderson-Palmer (TAP) equation directly from calculating the free energy (or the log of partition function).</p>
+
+<p>The free energy of the SK model $f_{\mathrm{TAP}}$ comprises two parts: the energy term and the entropy term.</p>
+
+<p><strong>The energy term:</strong></p>
+
+\[E(\beta,\mathbf{m})=\left\langle -\frac{1}{2} \sum_{i \neq j}J_{ij}\sigma_i\sigma_j-\; \sum_{i}h_i\sigma_i\right\rangle
+= -\frac{1}{2} \sum_{i \neq j}J_{ij} J_{ij}\langle\sigma_i\sigma_j\rangle - \sum_{i} h_i m_i,
+\quad \text{Eq. 1}\]
+
+<p>Here $m_i=\langle\sigma_i\rangle$, and $\langle *\rangle$ denotes the average over the Boltzmann distribution of ${\sigma_i}$.</p>
+
+<p>We will calculate $\langle\sigma_i\sigma_j\rangle$ explicitly as a function of $\beta$ and $\mathbf{m}$:</p>
+
+<p>The state of $\sigma_j$ can affect the state of $\sigma_i$:</p>
+
+\[\delta_j \sigma_i \;\triangleq\; \langle\sigma_i\rangle^{(\sigma_j=-1)}-\langle\sigma_i\rangle^{(\sigma_j=+1)}.\]
+
+<p>We can write $\langle\sigma_i\rangle^{(\sigma_j=-1)}$ and $\langle\sigma_i\rangle^{(\sigma_j=+1)}$ explicitly:</p>
+
+\[\langle\sigma_i\rangle^{(\sigma_j=+1)} = \delta_j\sigma_i \cdot P(\sigma_j=-1) + m_i,
+\quad \text{Eq. 2}\]
+
+\[\langle\sigma_i\rangle^{(\sigma_j=-1)} = -\delta_j\sigma_i \cdot P(\sigma_j=+1) + m_i,
+\quad \text{Eq. 3}\]
+
+<p>Where $P(\sigma_j=-1)=\frac{1-m_j}{2}$ and $P(\sigma_j=+1)=\frac{1+m_j}{2}$, are the marginal probability of $\sigma_j=-1$ or $+1$, Then we have:</p>
+
+\[\langle\sigma_i\sigma_j\rangle-\langle\sigma_i\rangle\langle\sigma_j\rangle
+\approx 1\cdot \langle\sigma_i\rangle^{(\sigma_j=+1)}\cdot P(\sigma_j=+1) +(-1)\cdot \langle\sigma_i\rangle^{(\sigma_j=-1)}\cdot P(\sigma_j=-1)-m_i m_j\]
+
+\[=2\cdot \delta_j\sigma_i\cdot P(\sigma_j=-1)P(\sigma_j=+1)
+=\frac{1}{2}\delta_j\sigma_i\cdot(1-m_j^2),
+\quad \text{Eq. 4}\]
+
+<p>Now we need to estimate $\delta_j\sigma_i$.  We know that:</p>
+
+\[m_i=\langle\sigma_i\rangle=\left\langle \tanh\big(\beta\langle J_{ij}\sigma_j + h_i\rangle\big)\right\rangle\]
+
+<p>So, with $x_i \triangleq\ J_{ij}\sigma_j+h_i$:</p>
+
+\[\delta_j\sigma_i \approx 
+\frac{\partial\langle\sigma_i\rangle}{\partial\sigma_j}\cdot(1-(-1))
+= 2\cdot\frac{\partial\langle\sigma_i\rangle}{\partial x_i}\cdot\frac{\partial x_i}{\partial\sigma_j}\]
+
+<p>The susceptibility $\frac{\partial\langle\sigma_i\rangle}{\partial x_i}=\beta(1-m_i^2)$, and $\frac{\partial x_i}{\partial\sigma_j}=J_{ij}$, thus we have:</p>
+
+\[\delta_j\sigma_i = 2\beta(1-m_i^2)J_{ij},
+\quad \text{Eq. 5}\]
+
+<p>Substitute Eq.5 into Eq. 4:</p>
+
+<p>We have:</p>
+
+\[\langle\sigma_i\sigma_j\rangle-\langle\sigma_i\rangle\langle\sigma_j\rangle
+=\beta(1-m_i^2)J_{ij}(1-m_j^2)\]
+
+<p>Aka:</p>
+
+\[\langle\sigma_i\sigma_j\rangle=\beta(1-m_i^2)J_{ij}(1-m_j^2)+m_i m_j,
+\quad \text{Eq. 6}\]
+
+<p>Now we can substitute Eq. 6 into Eq 1 and get:</p>
+
+\[E(\beta,\mathbf{m})
+= -\sum_{i \neq j}\frac{1}{2}J_{ij}m_i m_j - \sum_{i}h_i m_i
+-\frac{\beta}{2} \sum_{i \neq j} (1-m_i^2)J_{ij}^2(1-m_j^2),
+\quad \text{Eq. 7}\]
+
+<p><strong>The Entropy term ($\beta=0$):</strong></p>
+
+<p>When $\beta=0$, The Entropy term can be calculated directly as the information entropy assuming units state are independent from each other:</p>
+
+\[S(\beta=0,\mathbf{m})
+=-\frac{1}{2}\sum_i\left[
+(1+m_i)\log\left(\frac{1+m_i}{2}\right)
++(1-m_i)\log\left(\frac{1-m_i}{2}\right)
+\right]\]
+
+<p>The log of the partition function, $\beta f_{\mathrm{TAP}}$, when $\beta=0$, equals the negative of the entropy</p>
+
+\[\beta f_{\mathrm{TAP}}(\beta=0,\mathbf{m})=-S(\beta=0,\mathbf{m}),
+\quad \text{Eq. 8}\]
+
+<p><strong>The free energy when $\beta \neq 0$:</strong></p>
+
+<p>To derive the partition function when $\beta\neq 0$, we need to take advantage of the definition of energy in terms of the partition function:</p>
+
+\[E=\frac{\partial(\ln Z)}{\partial\beta}=\frac{\partial(\beta f_{\mathrm{TAP}})}{\partial\beta}\]
+
+<p>Thus we can integrate the energy $E$ on $\beta$ to get the free energy at non zero $\beta$:</p>
+
+\[\beta f_{\mathrm{TAP}}(\beta,\mathbf{m})
+=\beta f_{\mathrm{TAP}}(\beta=0,\mathbf{m})+\int_0^\beta E(\beta',\mathbf{m})\,d\beta',
+\quad \text{Eq. 9}\]
+
+<p>Substitute Eq. 7 and Eq. 8 into Eq.9 and perform the integration:</p>
+
+\[\beta f_{\mathrm{TAP}}(\beta,\mathbf{m})
+= -\frac{\beta}{2}\sum_{i \neq j}J_{ij}m_i m_j - \beta \sum_{i} h_i m_i
+-\frac{\beta^2}{4}\sum_{i \neq j}(1-m_i^2)J_{ij}^2(1-m_j^2)\]
+
+\[+\frac{1}{2}\sum_i\left[
+(1+m_i)\log\left(\frac{1+m_i}{2}\right)
++(1-m_i)\log\left(\frac{1-m_i}{2}\right)
+\right]\]
+
+<p>Aka, the free energy is:</p>
+
+\[f_{\mathrm{TAP}}(\beta,\mathbf{m})
+= -\frac{1}{2}\sum_{i \neq j}J_{ij}m_i m_j - \sum_{i}h_i m_i
+-\frac{\beta}{4}\sum_{i \neq j}(1-m_i^2)J_{ij}^2(1-m_j^2)\]
+
+\[+\frac{1}{2\beta}\sum_i\left[
+(1+m_i)\log\left(\frac{1+m_i}{2}\right)
++(1-m_i)\log\left(\frac{1-m_i}{2}\right)
+\right],
+\quad \text{Eq. 10}\]
+
+<p>The TAP equation and be derived by finding the maximal of $f_{\mathrm{TAP}}(\beta,\mathbf{m})$ in the magnetization space, aka $\frac{\partial f_{\mathrm{TAP}}(\beta,\mathbf{m})}{\partial m_i}=0$, for all $i$:</p>
+
+\[-J_{ij}m_j - h_i + \beta J_{ij}^2(1-m_j^2)m_i
++ \frac{1}{2\beta}\log\left(\frac{1+m_i}{1-m_i}\right)=0\]
+
+<p>Aka:</p>
+
+\[m_i = \tanh\left(\beta\left[J_{ij}m_j + h_i - \beta J_{ij}^2(1-m_j^2)m_i\right]\right),
+\quad \text{Eq. 11}\]
+
+<p>This is the TAP equation with the Onsager reaction field.</p>
+
+<p><strong>Reference:</strong></p>
+
+<p>Nishimori, Hidetoshi. Statistical physics of spin glasses and information processing: an introduction. No. 111. Clarendon Press, 2001.</p>
+
+
+  </div>
+
+</article>
+      </div>
+    </div>
+
+    <br/>
+<section id="footer">
+<div class="container-footer">
+  <div class="panel-footer">
+	  <div class="row">
+		<div class="col-sm-4">
+		<h5>Kaining Zhang 🌈</h5>
+            <p>International Centre for Theoretical Physics
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Contact</h5>	
+            <p><a href="mailto:kzhang@ictp.it" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Kaining via email</a> <br/>
+</p>
+		</div>
+
+		<div class="col-sm-4">
+		    <h5>Work Address</h5>	
+            <p>Via Beirut, 2-4, <br/> Trieste, 34151
+</p>
+		</div>
+	  </div>
+
+      <center><p>&copy 2026 Kaining Zhang </p></center>
+	</div>
+  </div>
+</div>
+
+<script src="/assets/javascript/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+
+</html>
